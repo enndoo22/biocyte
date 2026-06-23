@@ -1,0 +1,23 @@
+{% load static %}
+<section class="categories" id="categories">
+    <div class="container">
+        <h2 class="section-title">Категории продуктов</h2>
+        <p class="section-desc">Натуральные компоненты, которые работают для <br> вашей красоты</p>
+
+        <div class="categories-grid">
+            {% for cat in categories %}
+            <a href="{% url 'category_detail' cat.slug %}" class="category-card">
+                {% if cat.image %}
+                <img src="{{ cat.image.url }}" alt="{{ cat.title }}" loading="lazy">
+                {% else %}
+                <img src="{% static 'biocyte/img/no-image.jpg' %}" alt="Нет фото">
+                {% endif %}
+
+                <div class="category-overlay">
+                    <span>{{ cat.title }}</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

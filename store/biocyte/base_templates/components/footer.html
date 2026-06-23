@@ -1,0 +1,40 @@
+{% load static %}
+<footer class="footer-dark">
+    <div class="footer-content">
+        <div class="footer-contacts">
+            <a href="tel:+998948778722" class="footer-phone" id="contacts">{{ site_settings.phone }}</a>
+            <a href="mailto:info@vitaolam.uz" class="footer-email">info@vitaolam.uz</a>
+        </div>
+
+        <p class="footer-address">{{ site_settings.address }}</p>
+
+        <div class="footer-socials">
+            <!-- Telegram -->
+            <a href="{{ site_settings.telegram }}" class="social-icon tg">
+                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m22 2-7 20-4-9-9-4Z"/>
+                    <path d="M22 2 11 13"/>
+                </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a href="{{ site_settings.instagram }}" class="social-icon insta">
+                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+            </a>
+
+            <!-- Facebook -->
+            <a href="{{ site_settings.facebook }}" class="social-icon fb">
+                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>

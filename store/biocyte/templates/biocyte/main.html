@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero" >
+    <div class="hero-content">
+        <h1>BIOCYTE</h1>
+        <p class="subtitle">Экспертная лаборатория в области нутрикосметики</p>
+        <p class="tagline">Когда здоровье становится заметным</p>
+        <a href="#categories" class="btn">В магазин</a>
+    </div>
+</section>
+{% include 'components/categories.html' %}
+
+{% include 'components/delivery.html' %}
+
+{% include 'components/payment.html' %}
+
+{% include 'components/about.html' %}
+
+{% include 'components/blog.html' %}
+
+{% endblock %}

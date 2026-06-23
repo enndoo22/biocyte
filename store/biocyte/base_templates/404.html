@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="bct-err-page">
+    <div class="bct-err-container">
+
+        <div class="bct-err-content">
+            <div class="bct-err-illustration">
+                <div class="bct-err-bg-numbers">404</div>
+
+                <div class="bct-err-graphics-wrap">
+                    <svg class="bct-err-molecule-icon" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="10" stroke="#d1a384" stroke-width="2" fill="none"/>
+                        <circle cx="20" cy="20" r="6" stroke="#d1a384" stroke-width="2" fill="none"/>
+                        <circle cx="80" cy="20" r="6" stroke="#d1a384" stroke-width="2" fill="none"/>
+                        <circle cx="50" cy="85" r="8" fill="#d1a384"/>
+                        <line x1="26" y1="26" x2="43" y2="43" stroke="#d1a384" stroke-width="1"/>
+                        <line x1="74" y1="26" x2="57" y2="43" stroke="#d1a384" stroke-width="1"/>
+                        <line x1="50" y1="60" x2="50" y2="77" stroke="#d1a384" stroke-width="1"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="bct-err-text-wrap">
+                <h1 class="bct-err-title">Упс, страница потерялась</h1>
+                <p class="bct-err-subtitle">Похоже, эта формула красоты еще не разработана или адрес был введен
+                    неверно.</p>
+                <a href="{% url 'main' %}" class="bct-err-btn">Вернуться на главную</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

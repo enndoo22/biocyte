@@ -1,0 +1,33 @@
+{% load static %}
+<div class="blog-modern-page" id="blog">
+    <div class="container">
+        <div class="blog-header">
+<!--            <span class="blog-subtitle">Magazine & Articles</span>-->
+            <h1 class="blog-main-title">Мир нутрикосметики</h1>
+            <p class="blog-description">Секреты красоты, научные открытия и советы по уходу за собой изнутри.</p>
+        </div>
+
+        <div class="blog-grid">
+            {% for post in posts %}
+            <article class="blog-card">
+                <div class="blog-image-wrapper">
+                    {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                    {% endif %}
+                    <div class="blog-date">{{ post.date|date:"d M Y" }}</div>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-category">{{ post.category }}</span>
+                    <h3 class="blog-post-title">{{ post.title }}</h3>
+                    <p class="blog-excerpt">{{ post.excerpt }}</p>
+                    <a href="{% url 'post_detail' post.slug %}" class="blog-read-more">Читать далее</a>
+                </div>
+            </article>
+            {% empty %}
+            <p style="text-align: center; width: 100%; grid-column: 1/-1;">
+                Статей пока нет. Добавьте их в <a href="/admin/">админке</a>.
+            </p>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="category-page">
+    <div class="container">
+
+        <div class="shop-nav">
+            <a href="{% url 'main' %}">Главная</a> /
+            <span>{% if current_category %}{{ current_category.title }}{% else %}Все товары{% endif %}</span>
+        </div>
+
+        <header class="category-header">
+            <h1 class="title">
+                {% if current_category %}{{ current_category.title }}{% else %}Наш ассортимент{% endif %}
+            </h1>
+            <p class="subtitle">Французская нутрикосметика премиум-класса</p>
+        </header>
+
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product-card">
+                <a href="{% url 'product_detail' product.slug %}" class="main-card-link"></a>
+
+                <div class="product-img-wrapper">
+                    {% with product.images.first as img_obj %}
+                    {% if img_obj %}
+                    <img src="{{ img_obj.image.url }}" alt="{{ product.title }}">
+                    {% else %}
+                    <img src="{% static 'biocyte/img/no-image.png' %}" alt="Нет фото">
+                    {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="product-details">
+                    <span class="cat-name">{{ product.category.title }}</span>
+                    <h3 class="product-title">{{ product.title }}</h3>
+                    <span class="btn-buy">Подробнее</span>
+                </div>
+            </div>
+            {% empty %}
+            <div class="empty-msg" style="text-align: center; width: 100%; grid-column: 1/-1;">
+                В данной категории товаров пока нет.
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

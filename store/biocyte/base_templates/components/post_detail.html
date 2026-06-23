@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<article class="post-detail-page">
+    <div class="container">
+        <div class="back-nav">
+            <a href="{% url 'main' %}#blog" class="back-link">Назад к блогу</a>
+        </div>
+
+        <header class="post-header">
+            <span class="post-category">{{ post.category }}</span>
+            <h1 class="post-title">{{ post.title }}</h1>
+            <div class="post-meta">{{ post.date|date:"d F Y" }}</div>
+        </header>
+
+        {% if post.image %}
+        <div class="post-hero-image">
+            <img src="{{ post.image.url }}" alt="{{ post.title }}">
+        </div>
+        {% endif %}
+
+        <div class="post-body">
+            <p class="post-excerpt"><em>{{ post.excerpt }}</em></p>
+            <hr class="divider">
+            <div class="post-main-content">
+                {{ post.content|linebreaks }}
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <title>Biocyte</title>
+    {% include 'components/style.html' %}
+
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <a href="{% url 'main' %}">
+            <img src="{% static 'biocyte/img/img_2.webp' %}" alt="BIOCYTE Laboratoire">
+        </a>
+    </div>
+
+    <div class="burger-menu" id="burger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav" id="nav-menu">
+        <a href="{% url 'main' %}">Главная</a>
+        <a href="/#categories">Продукты</a>
+        <a href="/#delivery">Доставка</a>
+        <a href="/#payment">Оплата</a>
+        <a href="/#about">О нас</a>
+        <a href="/#contacts">Контакты</a>
+        <a href="/#blog">Блог</a>
+    </nav>
+</header>
+
+{% block content %}
+{% endblock %}
+
+
+{% include 'components/footer.html' %}
+<script src="{% static 'biocyte/js/script.js' %}"></script>
+</body>
+</html>

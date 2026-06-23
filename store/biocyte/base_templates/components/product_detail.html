@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="product-page">
+    <div class="container">
+
+        <nav class="breadcrumb">
+            <a href="{% url 'main' %}">Главная</a> /
+            <a href="{% url 'category_detail' product.category.slug %}">{{ product.category.title }}</a> /
+            <span>{{ product.title }}</span>
+        </nav>
+
+        <div class="product-main">
+            <div class="product-gallery">
+                <div class="main-img-container">
+                    {% with product.images.first as main_img %}
+                    <img id="main-product-image" src="{{ main_img.image.url }}" alt="{{ product.title }}">
+                    {% endwith %}
+                </div>
+                <div class="thumbnail-list">
+                    {% for img in product_images %}
+                    <img class="thumb" src="{{ img.image.url }}" onclick="changeImage(this.src)">
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="product-info">
+                <span class="category-label">{{ product.category.title }}</span>
+                <h1 class="product-name">{{ product.title }}</h1>
+                <!--                <p class="product-price">{{ product.price }} сум</p>-->
+
+                <div class="product-description">
+                    <h3>Описание</h3>
+                    <p>{{ product.desc|linebreaks }}</p>
+                </div>
+
+                <div class="extra-info">
+                    <div class="info-block">
+                        <strong>Способ применения:</strong>
+                        <p>{{ product.use_instructions|linebreaks }}</p>
+                    </div>
+                    <div class="info-block">
+                        <strong>Состав:</strong>
+                        <p>{{ product.composition|linebreaks }}</p>
+                    </div>
+                </div>
+
+                <a href="https://t.me/vitaolam_manager" target="_blank" class="order-btn"
+                   style="text-decoration: none; display: block; text-align: center;">
+                    Заказать в Telegram
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeImage(src) {
+        document.getElementById('main-product-image').src = src;
+    }
+
+    
+
+</script>
+
+
+{% endblock %}

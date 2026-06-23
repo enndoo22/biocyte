@@ -1,0 +1,66 @@
+{% load static %}
+<div class="delivery-modern-page" id="delivery">
+    <div class="container">
+        <div class="delivery-header">
+<!--            <span class="delivery-subtitle">Delivery Options</span>-->
+            <h2 class="delivery-main-title">Информация о доставке</h2>
+            <p class="delivery-intro">Мы предлагаем удобные способы получения вашего заказа в Ташкенте.</p>
+        </div>
+
+        <div class="delivery-cards-grid">
+
+            <div class="delivery-card-item">
+                <div class="card-inner">
+                    <div class="card-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <h3>Самовывоз</h3>
+                    <p>Вы можете забрать свой заказ из нашего офиса. Услуга предоставляется <strong
+                            class="accent-weight">бесплатно</strong>.</p>
+
+                    <div class="address-box">
+                        <span class="label">Наш адрес:</span>
+                        <p class="address-text">{{ site_settings.address }}</p>
+                        <p class="address-text">{{ site_settings.phone }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="delivery-card-item">
+                <div class="card-inner">
+                    <div class="card-icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="lucide lucide-truck-icon lucide-truck">
+                            <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+                            <path d="M15 18H9"/>
+                            <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+                            <circle cx="17" cy="18" r="2"/>
+                            <circle cx="7" cy="18" r="2"/>
+                        </svg>
+                    </div>
+                    <h3>Доставка</h3>
+                    <p>Мы доставим ваш заказ по указанному адресу в кратчайшие сроки.</p>
+
+                    <div class="address-box service-box">
+                        <span class="label">Сервис:</span>
+                        <p class="address-text">Осуществляется силами ЯндексGo.</p>
+                    </div>
+
+                    <div class="payment-note">
+                        <svg class="small-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12" y2="16"/>
+                        </svg>
+                        <span>Стоимость доставки оплачивается при получении.</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
