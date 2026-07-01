@@ -53,12 +53,27 @@ class ProductAdmin(admin.ModelAdmin):
     first_photo.short_description = 'Фото продукта'
 
 
+from django.contrib import admin
+from .models import Post
+
+
+from django.contrib import admin
+from .models import Post
+
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'date')
     search_fields = ('title', 'category')
     prepopulated_fields = {"slug": ("title",)}
 
+    class Media:
+        js = ('django_quill/django_quill.js',)
+        css = {
+            'all': (
+                'django_quill/django_quill.css',
+                'biocyte/css/quill_fix.css',
+            )
+        }
 
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(admin.ModelAdmin):

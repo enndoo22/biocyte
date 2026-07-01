@@ -1,4 +1,5 @@
 from django.db import models
+from django_quill.fields import QuillField
 
 
 # Create your models here.
@@ -67,7 +68,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200, verbose_name="Заголовок")
     category = models.CharField(max_length=100, verbose_name="Категория")
     excerpt = models.TextField(verbose_name="Краткое описание")
-    content = models.TextField(verbose_name="Полный текст статьи")
+    content = QuillField(verbose_name="Полный текст статьи")
     image = models.ImageField(upload_to='blog_images/', verbose_name="Изображение")
     date = models.DateField(auto_now_add=True, verbose_name="Дата публикации")
     slug = models.SlugField(unique=True, blank=True)

@@ -1,0 +1,46 @@
+/* Разрешаем панели инструментов нормально переноситься и дышать */
+.ql-toolbar.ql-snow {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important; /* Делаем зазор между группами кнопок */
+    background: #ffffff !important;
+    border: 1px solid #cccccc !important;
+    padding: 8px !important;
+}
+
+/* Оформляем окно ввода текста */
+.ql-container.ql-snow {
+    display: block !important;
+    height: 320px !important;
+    background: #ffffff !important;
+    border: 1px solid #cccccc !important;
+    border-top: none !important;
+}
+
+/* Намертво разделяем группы кнопок (инструменты форматирования) */
+.ql-snow .ql-formats {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-right: 15px !important; /* Принудительный отступ справа от группы */
+    padding-right: 10px !important;
+    border-right: 1px solid #e0e0e0 !important; /* Небольшая серая черта между группами */
+}
+
+/* Убираем черту у самой последней группы кнопок */
+.ql-snow .ql-formats:last-child {
+    border-right: none !important;
+    margin-right: 0 !important;
+}
+
+/* Даем небольшие отступы самим кнопкам внутри одной группы, чтобы они не слипались */
+.ql-snow .ql-toolbar button,
+.ql-snow.ql-toolbar button {
+    margin: 0 2px !important;
+    border-radius: 3px !important; /* Слегка скруглим углы при наведении */
+}
+
+/* Подсвечиваем кнопки при наведении, чтобы было понятно, куда нажимаешь */
+.ql-snow .ql-toolbar button:hover,
+.ql-snow.ql-toolbar button:hover {
+    background-color: #f0f2f5 !important;
+}

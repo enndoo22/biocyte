@@ -23,7 +23,7 @@
             <p class="post-excerpt"><em>{{ post.excerpt }}</em></p>
             <hr class="divider">
             <div class="post-main-content">
-                {{ post.content|linebreaks }}
+                {{ post.content.html|safe }}
             </div>
         </div>
     </div>
